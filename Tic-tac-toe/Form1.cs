@@ -59,12 +59,8 @@ namespace Tic_tac_toe
         }
         public void CheckWinner()
         {
-            if (turn_count == 9)
-            {
-                MessageBox.Show("Draw!");
-                return;
-            }
             bool there_is_a_winner = false;
+            //
             // horizontal check
             if ((A1.Text == A2.Text) && (A2.Text == A3.Text) && !A1.Enabled)
             {
@@ -105,8 +101,6 @@ namespace Tic_tac_toe
                 there_is_a_winner = true;
             }
 
-            
-
             if (there_is_a_winner)
             {
                 string winner = "";
@@ -120,8 +114,36 @@ namespace Tic_tac_toe
                 }
 
                 MessageBox.Show($"{winner} is win!");
+                DisableButton();
+                return;
             }
-            
+            if (turn_count == 9)
+            {
+                MessageBox.Show("Draw!");
+                return;
+            }
+
         }
+        public void DisableButton()
+        {
+            foreach (Button button in panel1.Controls)
+            {
+                button.Enabled = false;
+            }
+        }
+
+        #region Menu Events
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            turn = true;
+            turn_count = 0;
+
+            foreach (Button button in panel1.Controls)
+            {
+                button.Enabled = true;
+                button.Text = "";
+            }
+        }
+        #endregion
     }
 }
