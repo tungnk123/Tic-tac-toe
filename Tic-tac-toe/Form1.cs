@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Tic_tac_toe
 {
-    public partial class Form1 : Form
+    public partial class FormPlayerVsPlayer : Form
     {
         bool turn = true; //true = left Turn; false = right turn
         public bool Turn
@@ -36,7 +36,7 @@ namespace Tic_tac_toe
                 turn_count = value;
             }
         }
-        public Form1()
+        public FormPlayerVsPlayer()
         {
             InitializeComponent();
         }
@@ -144,6 +144,15 @@ namespace Tic_tac_toe
                 button.Text = "";
             }
         }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MenuForm menuForm = new MenuForm();
+            menuForm.Show();
+        }
         #endregion
+
+
     }
 }
