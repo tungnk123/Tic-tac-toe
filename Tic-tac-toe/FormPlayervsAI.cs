@@ -44,9 +44,11 @@ namespace Tic_tac_toe
                 button.Tag = "X";
                 button.BackgroundImage = Tic_tac_toe.Properties.Resources.x;
                 button.BackgroundImageLayout = ImageLayout.Stretch;
+
             }
             else
             {
+                button = computer_make_move();
                 button.Tag = "O";
                 button.BackgroundImage = Tic_tac_toe.Properties.Resources.O;
                 button.BackgroundImageLayout = ImageLayout.Stretch;
@@ -55,6 +57,8 @@ namespace Tic_tac_toe
             button.Enabled = false;
             turn_count++;
             CheckWinner();
+
+
         }
         public void CheckWinner()
         {
@@ -115,8 +119,8 @@ namespace Tic_tac_toe
                 }
 
                 MessageBox.Show($"{winner} is win!");
-                labelCountLeft.Text = count_left.ToString();
-                labelCountRight.Text = count_right.ToString();
+                labelCountLeft.Tag = count_left.ToString();
+                labelCountRight.Tag = count_right.ToString();
                 DisableButton();
                 buttonRestart.Visible = true;
                 return;
@@ -147,12 +151,7 @@ namespace Tic_tac_toe
                     button.BackgroundImage = Tic_tac_toe.Properties.Resources.x;
                     button.BackgroundImageLayout = ImageLayout.Stretch;
                 }
-                else
-                {
-                    button.Tag = "O";
-                    button.BackgroundImage = Tic_tac_toe.Properties.Resources.O;
-                    button.BackgroundImageLayout = ImageLayout.Stretch;
-                }
+               
             }
         }
 
@@ -176,8 +175,8 @@ namespace Tic_tac_toe
             buttonRestart.Visible = false;
             count_left = 0;
             count_right = 0;
-            labelCountLeft.Text = count_left.ToString();
-            labelCountRight.Text = count_right.ToString();
+            labelCountLeft.Tag = count_left.ToString();
+            labelCountRight.Tag = count_right.ToString();
             foreach (Button button in panel1.Controls)
             {
                 button.Enabled = true;
@@ -212,6 +211,172 @@ namespace Tic_tac_toe
             }
         }
 
+        #region AI code
+        private Button computer_make_move()
+        {
+            //priority 1:  get tick tac toe
+            //priority 2:  block x tic tac toe
+            //priority 3:  go for corner space
+            //priority 4:  pick open space
+
+            Button move = null;
+
+            //look for tic tac toe opportunities
+            move = look_for_win_or_block("O"); //look for win
+            if (move == null)
+            {
+                move = look_for_win_or_block("X"); //look for block
+                if (move == null)
+                {
+                    move = look_for_corner();
+                    if (move == null)
+                    {
+                        move = look_for_open_space();
+                    }//end if
+                }//end if
+            }//end if
+
+            //if (move != null)
+            //{
+            //    move.PerformClick();
+            //}
+            return move;
+        }
+        private Button look_for_open_space()
+        {
+            Button b = null;
+            foreach (Button c in panel1.Controls)
+            {
+                b = (Button)c; 
+                if (b != null)
+                {
+                    if ((string)b.Tag == "")
+                        return b;
+                }//end if
+            }//end if
+
+            return null;
+        }
+
+        private Button look_for_corner()
+        {
+            if ((string)A1.Tag == "O")
+            {
+                if ((string)A3.Tag == "")
+                    return A3;
+                if ((string)C3.Tag == "")
+                    return C3;
+                if ((string)C1.Tag == "")
+                    return C1;
+            }
+
+            if ((string)A3.Tag == "O")
+            {
+                if ((string)A1.Tag == "")
+                    return A1;
+                if ((string)C3.Tag == "")
+                    return C3;
+                if ((string)C1.Tag == "")
+                    return C1;
+            }
+
+            if ((string)C3.Tag == "O")
+            {
+                if ((string)A1.Tag == "")
+                    return A3;
+                if ((string)A3.Tag == "")
+                    return A3;
+                if ((string)C1.Tag == "")
+                    return C1;
+            }
+
+            if ((string)C1.Tag == "O")
+            {
+                if ((string)A1.Tag == "")
+                    return A3;
+                if ((string)A3.Tag == "")
+                    return A3;
+                if ((string)C3.Tag == "")
+                    return C3;
+            }
+
+            if ((string)A1.Tag == "")
+                return A1;
+            if ((string)A3.Tag == "")
+                return A3;
+            if ((string)C1.Tag == "")
+                return C1;
+            if ((string)C3.Tag == "")
+                return C3;
+
+            return null;
+        }
+
+        private Button look_for_win_or_block(object mark)
+        {
+            //HORIZONTAL TESTS
+            if ((A1.Tag == mark) && (A2.Tag == mark) && ((string)A3.Tag == ""))
+                return A3;
+            if ((A2.Tag == mark) && (A3.Tag == mark) && ((string)A1.Tag == ""))
+                return A1;
+            if ((A1.Tag == mark) && (A3.Tag == mark) && ((string)A2.Tag == ""))
+                return A2;
+
+            if ((B1.Tag == mark) && (B2.Tag == mark) && ((string)B3.Tag == ""))
+                return B3;
+            if ((B2.Tag == mark) && (B3.Tag == mark) && ((string)B1.Tag == ""))
+                return B1;
+            if ((B1.Tag == mark) && (B3.Tag == mark) && ((string)B2.Tag == ""))
+                return B2;
+
+            if ((C1.Tag == mark) && (C2.Tag == mark) && ((string)C3.Tag == ""))
+                return C3;
+            if ((C2.Tag == mark) && (C3.Tag == mark) && ((string)C1.Tag == ""))
+                return C1;
+            if ((C1.Tag == mark) && (C3.Tag == mark) && ((string)C2.Tag == ""))
+                return C2;
+
+            //VERTICAL TESTS
+            if ((A1.Tag == mark) && (B1.Tag == mark) && ((string)C1.Tag == ""))
+                return C1;
+            if ((B1.Tag == mark) && (C1.Tag == mark) && ((string)A1.Tag == ""))
+                return A1;
+            if ((A1.Tag == mark) && (C1.Tag == mark) && ((string)B1.Tag == ""))
+                return B1;
+
+            if ((A2.Tag == mark) && (B2.Tag == mark) && ((string)C2.Tag == ""))
+                return C2;
+            if ((B2.Tag == mark) && (C2.Tag == mark) && ((string)A2.Tag == ""))
+                return A2;
+            if ((A2.Tag == mark) && (C2.Tag == mark) && ((string)B2.Tag == ""))
+                return B2;
+
+            if ((A3.Tag == mark) && (B3.Tag == mark) && ((string)C3.Tag == ""))
+                return C3;
+            if ((B3.Tag == mark) && (C3.Tag == mark) && ((string)A3.Tag == ""))
+                return A3;
+            if ((A3.Tag == mark) && (C3.Tag == mark) && ((string)B3.Tag == ""))
+                return B3;
+
+            //DIAGONAL TESTS
+            if ((A1.Tag == mark) && (B2.Tag == mark) && ((string)C3.Tag == ""))
+                return C3;
+            if ((B2.Tag == mark) && (C3.Tag == mark) && ((string)A1.Tag == ""))
+                return A1;
+            if ((A1.Tag == mark) && (C3.Tag == mark) && ((string)B2.Tag == ""))
+                return B2;
+
+            if ((A3.Tag == mark) && (B2.Tag == mark) && ((string)C1.Tag == ""))
+                return C1;
+            if ((B2.Tag == mark) && (C1.Tag == mark) && ((string)A3.Tag == ""))
+                return A3;
+            if ((A3.Tag == mark) && (C1.Tag == mark) && ((string)B2.Tag == ""))
+                return B2;
+
+            return null;
+        }
+
+        #endregion
 
     }
 }
