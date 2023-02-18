@@ -213,11 +213,11 @@ namespace Tic_tac_toe
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Snap ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
             this.label1.Location = new System.Drawing.Point(12, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 25);
+            this.label1.Size = new System.Drawing.Size(112, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "PLAYER 1";
             // 
@@ -225,18 +225,18 @@ namespace Tic_tac_toe
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Snap ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Yellow;
             this.label2.Location = new System.Drawing.Point(449, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 25);
+            this.label2.Size = new System.Drawing.Size(117, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "PLAYER 2";
             // 
             // labelCountLeft
             // 
             this.labelCountLeft.BackColor = System.Drawing.Color.LemonChiffon;
-            this.labelCountLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCountLeft.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCountLeft.ForeColor = System.Drawing.Color.Red;
             this.labelCountLeft.Location = new System.Drawing.Point(30, 120);
             this.labelCountLeft.Name = "labelCountLeft";
@@ -248,7 +248,7 @@ namespace Tic_tac_toe
             // labelCountRight
             // 
             this.labelCountRight.BackColor = System.Drawing.Color.LemonChiffon;
-            this.labelCountRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCountRight.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCountRight.ForeColor = System.Drawing.Color.Red;
             this.labelCountRight.Location = new System.Drawing.Point(485, 120);
             this.labelCountRight.Name = "labelCountRight";
@@ -260,11 +260,11 @@ namespace Tic_tac_toe
             // buttonRestart
             // 
             this.buttonRestart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRestart.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRestart.ForeColor = System.Drawing.Color.Red;
-            this.buttonRestart.Location = new System.Drawing.Point(226, 400);
+            this.buttonRestart.Location = new System.Drawing.Point(224, 397);
             this.buttonRestart.Name = "buttonRestart";
-            this.buttonRestart.Size = new System.Drawing.Size(115, 46);
+            this.buttonRestart.Size = new System.Drawing.Size(129, 46);
             this.buttonRestart.TabIndex = 6;
             this.buttonRestart.Text = "Restart";
             this.buttonRestart.UseVisualStyleBackColor = false;
