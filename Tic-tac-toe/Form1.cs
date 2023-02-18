@@ -169,6 +169,11 @@ namespace Tic_tac_toe
             menuForm.Show();
         }
 
+        private void FormPlayerVsPlayer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MenuForm.instance.Show();
+        }
+
         #endregion
 
         private void buttonRestart_Click(object sender, EventArgs e)
@@ -183,5 +188,7 @@ namespace Tic_tac_toe
                 button.BackgroundImage = null;
             }
         }
+
+        
     }
 }

@@ -290,6 +290,7 @@ namespace Tic_tac_toe
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tic Tac Toe Tung";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPlayerVsPlayer_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
