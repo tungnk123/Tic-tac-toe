@@ -136,8 +136,6 @@ namespace Tic_tac_toe
             this.C3.TabIndex = 18;
             this.C3.UseVisualStyleBackColor = true;
             this.C3.Click += new System.EventHandler(this.Button_Click);
-            this.C3.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.C3.MouseLeave += new System.EventHandler(this.Button_Leave);
             // 
             // C2
             // 
@@ -147,8 +145,6 @@ namespace Tic_tac_toe
             this.C2.TabIndex = 17;
             this.C2.UseVisualStyleBackColor = true;
             this.C2.Click += new System.EventHandler(this.Button_Click);
-            this.C2.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.C2.MouseLeave += new System.EventHandler(this.Button_Leave);
             // 
             // C1
             // 
@@ -158,8 +154,6 @@ namespace Tic_tac_toe
             this.C1.TabIndex = 16;
             this.C1.UseVisualStyleBackColor = true;
             this.C1.Click += new System.EventHandler(this.Button_Click);
-            this.C1.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.C1.MouseLeave += new System.EventHandler(this.Button_Leave);
             // 
             // B3
             // 
@@ -169,8 +163,6 @@ namespace Tic_tac_toe
             this.B3.TabIndex = 15;
             this.B3.UseVisualStyleBackColor = true;
             this.B3.Click += new System.EventHandler(this.Button_Click);
-            this.B3.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.B3.MouseLeave += new System.EventHandler(this.Button_Leave);
             // 
             // B2
             // 
@@ -180,8 +172,6 @@ namespace Tic_tac_toe
             this.B2.TabIndex = 14;
             this.B2.UseVisualStyleBackColor = true;
             this.B2.Click += new System.EventHandler(this.Button_Click);
-            this.B2.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.B2.MouseLeave += new System.EventHandler(this.Button_Leave);
             // 
             // B1
             // 
@@ -191,8 +181,6 @@ namespace Tic_tac_toe
             this.B1.TabIndex = 13;
             this.B1.UseVisualStyleBackColor = true;
             this.B1.Click += new System.EventHandler(this.Button_Click);
-            this.B1.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.B1.MouseLeave += new System.EventHandler(this.Button_Leave);
             // 
             // A3
             // 
@@ -202,8 +190,6 @@ namespace Tic_tac_toe
             this.A3.TabIndex = 12;
             this.A3.UseVisualStyleBackColor = true;
             this.A3.Click += new System.EventHandler(this.Button_Click);
-            this.A3.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.A3.MouseLeave += new System.EventHandler(this.Button_Leave);
             // 
             // A2
             // 
@@ -213,8 +199,6 @@ namespace Tic_tac_toe
             this.A2.TabIndex = 11;
             this.A2.UseVisualStyleBackColor = true;
             this.A2.Click += new System.EventHandler(this.Button_Click);
-            this.A2.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.A2.MouseLeave += new System.EventHandler(this.Button_Leave);
             // 
             // A1
             // 
@@ -224,8 +208,6 @@ namespace Tic_tac_toe
             this.A1.TabIndex = 10;
             this.A1.UseVisualStyleBackColor = true;
             this.A1.Click += new System.EventHandler(this.Button_Click);
-            this.A1.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.A1.MouseLeave += new System.EventHandler(this.Button_Leave);
             // 
             // label1
             // 

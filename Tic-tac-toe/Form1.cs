@@ -43,8 +43,6 @@ namespace Tic_tac_toe
             InitializeComponent();
         }
 
-
-        #region Button Events
         private void Button_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -145,38 +143,6 @@ namespace Tic_tac_toe
                 button.Enabled = false;
             }
         }
-
-        private void Button_Enter(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Enabled)
-            {
-                if (turn)
-                {
-                    button.Tag = "X";
-                    button.BackgroundImage = Tic_tac_toe.Properties.Resources.x;
-                    button.BackgroundImageLayout = ImageLayout.Stretch;
-                }
-                else
-                {
-                    button.Tag = "O";
-                    button.BackgroundImage = Tic_tac_toe.Properties.Resources.O;
-                    button.BackgroundImageLayout = ImageLayout.Stretch;
-                }
-            }
-        }
-
-        private void Button_Leave(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            if (button.Enabled)
-            {
-                button.Enabled = true;
-                button.Tag = "";
-                button.BackgroundImage = null;
-            }
-        }
-        #endregion
 
         #region Menu Events
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
