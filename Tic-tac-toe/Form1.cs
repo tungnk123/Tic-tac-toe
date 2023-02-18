@@ -46,11 +46,15 @@ namespace Tic_tac_toe
             Button button = (Button)sender;
             if (turn)
             {
-                button.Text = "X";
+                button.Tag = "X";
+                button.BackgroundImage = Tic_tac_toe.Properties.Resources.x;
+                button.BackgroundImageLayout = ImageLayout.Stretch;
             }
             else
             {
-                button.Text = "O";
+                button.Tag = "O";
+                button.BackgroundImage = Tic_tac_toe.Properties.Resources.O;
+                button.BackgroundImageLayout = ImageLayout.Stretch;
             }
             turn = !turn;
             button.Enabled = false;
@@ -62,41 +66,41 @@ namespace Tic_tac_toe
             bool there_is_a_winner = false;
             //
             // horizontal check
-            if ((A1.Text == A2.Text) && (A2.Text == A3.Text) && !A1.Enabled)
+            if ((A1.Tag == A2.Tag) && (A2.Tag == A3.Tag) && !A1.Enabled)
             {
                 there_is_a_winner = true;
             }
-            else if ((B1.Text == B2.Text) && (B2.Text == B3.Text) && !B1.Enabled)
+            else if ((B1.Tag == B2.Tag) && (B2.Tag == B3.Tag) && !B1.Enabled)
             {
                 there_is_a_winner = true;
             }
-            else if ((C1.Text == C2.Text) && (C2.Text == C3.Text) && !C1.Enabled)
+            else if ((C1.Tag == C2.Tag) && (C2.Tag == C3.Tag) && !C1.Enabled)
             {
                 there_is_a_winner = true;
             }
 
             //
             // vertical check
-            if ((A1.Text == B1.Text) && (B1.Text == C1.Text) && !A1.Enabled)
+            if ((A1.Tag == B1.Tag) && (B1.Tag == C1.Tag) && !A1.Enabled)
             {
                 there_is_a_winner = true;
             }
-            else if ((A2.Text == B2.Text) && (B2.Text == C2.Text) && !A2.Enabled)
+            else if ((A2.Tag == B2.Tag) && (B2.Tag == C2.Tag) && !A2.Enabled)
             {
                 there_is_a_winner = true;
             }
-            else if ((A3.Text == B3.Text) && (B3.Text == C3.Text) && !A3.Enabled)
+            else if ((A3.Tag == B3.Tag) && (B3.Tag == C3.Tag) && !A3.Enabled)
             {
                 there_is_a_winner = true;
             }
 
             //
             // diagonal check
-            if ((A1.Text == B2.Text) && (B2.Text == C3.Text) && !A1.Enabled)
+            if ((A1.Tag == B2.Tag) && (B2.Tag == C3.Tag) && !A1.Enabled)
             {
                 there_is_a_winner = true;
             }
-            else if ((A3.Text == B2.Text) && (B2.Text == C1.Text) && !A3.Enabled)
+            else if ((A3.Tag == B2.Tag) && (B2.Tag == C1.Tag) && !A3.Enabled)
             {
                 there_is_a_winner = true;
             }
@@ -141,7 +145,8 @@ namespace Tic_tac_toe
             foreach (Button button in panel1.Controls)
             {
                 button.Enabled = true;
-                button.Text = "";
+                button.Tag = "";
+                button.BackgroundImage = null;
             }
         }
 
