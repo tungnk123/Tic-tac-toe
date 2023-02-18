@@ -25,5 +25,12 @@ namespace Tic_tac_toe
             FormPlayerVsPlayer formPlayerVsPlayer = new FormPlayerVsPlayer();
             formPlayerVsPlayer.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormPlayerVsAI formPlayerVsAI = new FormPlayerVsAI();
+            formPlayerVsAI.Show();
+        }
     }
 }
