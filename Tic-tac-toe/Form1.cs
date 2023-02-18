@@ -36,6 +36,8 @@ namespace Tic_tac_toe
                 turn_count = value;
             }
         }
+        public int count_left = 0;
+        public int count_right = 0;
         public FormPlayerVsPlayer()
         {
             InitializeComponent();
@@ -111,19 +113,25 @@ namespace Tic_tac_toe
                 if (turn)
                 {
                     winner = "O";
+                    count_right++;
                 }
                 else
                 {
                     winner = "X";
+                    count_left++;
                 }
 
                 MessageBox.Show($"{winner} is win!");
+                labelCountLeft.Text = count_left.ToString();
+                labelCountRight.Text = count_right.ToString();
                 DisableButton();
+                buttonRestart.Visible = true;
                 return;
             }
             if (turn_count == 9)
             {
                 MessageBox.Show("Draw!");
+                buttonRestart.Visible = true;
                 return;
             }
 
@@ -141,7 +149,11 @@ namespace Tic_tac_toe
         {
             turn = true;
             turn_count = 0;
-
+            buttonRestart.Visible = false;
+            count_left = 0;
+            count_right = 0;
+            labelCountLeft.Text = count_left.ToString();
+            labelCountRight.Text = count_right.ToString();
             foreach (Button button in panel1.Controls)
             {
                 button.Enabled = true;
@@ -156,8 +168,20 @@ namespace Tic_tac_toe
             MenuForm menuForm = new MenuForm();
             menuForm.Show();
         }
+
         #endregion
 
-
+        private void buttonRestart_Click(object sender, EventArgs e)
+        {
+            turn = true;
+            turn_count = 0;
+            buttonRestart.Visible = false;
+            foreach (Button button in panel1.Controls)
+            {
+                button.Enabled = true;
+                button.Tag = "";
+                button.BackgroundImage = null;
+            }
+        }
     }
 }

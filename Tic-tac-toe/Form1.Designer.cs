@@ -47,6 +47,11 @@ namespace Tic_tac_toe
             this.A3 = new System.Windows.Forms.Button();
             this.A2 = new System.Windows.Forms.Button();
             this.A1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelCountLeft = new System.Windows.Forms.Label();
+            this.labelCountRight = new System.Windows.Forms.Label();
+            this.buttonRestart = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +63,7 @@ namespace Tic_tac_toe
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(563, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(574, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -108,6 +113,7 @@ namespace Tic_tac_toe
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.C3);
             this.panel1.Controls.Add(this.C2);
             this.panel1.Controls.Add(this.C1);
@@ -117,9 +123,9 @@ namespace Tic_tac_toe
             this.panel1.Controls.Add(this.A3);
             this.panel1.Controls.Add(this.A2);
             this.panel1.Controls.Add(this.A1);
-            this.panel1.Location = new System.Drawing.Point(126, 79);
+            this.panel1.Location = new System.Drawing.Point(135, 99);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(303, 279);
+            this.panel1.Size = new System.Drawing.Size(308, 279);
             this.panel1.TabIndex = 1;
             // 
             // C3
@@ -203,11 +209,79 @@ namespace Tic_tac_toe
             this.A1.UseVisualStyleBackColor = true;
             this.A1.Click += new System.EventHandler(this.Button_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(12, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "PLAYER 1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Yellow;
+            this.label2.Location = new System.Drawing.Point(449, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "PLAYER 2";
+            // 
+            // labelCountLeft
+            // 
+            this.labelCountLeft.BackColor = System.Drawing.Color.LemonChiffon;
+            this.labelCountLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCountLeft.ForeColor = System.Drawing.Color.Red;
+            this.labelCountLeft.Location = new System.Drawing.Point(30, 120);
+            this.labelCountLeft.Name = "labelCountLeft";
+            this.labelCountLeft.Size = new System.Drawing.Size(55, 55);
+            this.labelCountLeft.TabIndex = 4;
+            this.labelCountLeft.Text = "0";
+            this.labelCountLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelCountRight
+            // 
+            this.labelCountRight.BackColor = System.Drawing.Color.LemonChiffon;
+            this.labelCountRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCountRight.ForeColor = System.Drawing.Color.Red;
+            this.labelCountRight.Location = new System.Drawing.Point(485, 120);
+            this.labelCountRight.Name = "labelCountRight";
+            this.labelCountRight.Size = new System.Drawing.Size(55, 55);
+            this.labelCountRight.TabIndex = 5;
+            this.labelCountRight.Text = "0";
+            this.labelCountRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonRestart
+            // 
+            this.buttonRestart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRestart.ForeColor = System.Drawing.Color.Red;
+            this.buttonRestart.Location = new System.Drawing.Point(226, 400);
+            this.buttonRestart.Name = "buttonRestart";
+            this.buttonRestart.Size = new System.Drawing.Size(115, 46);
+            this.buttonRestart.TabIndex = 6;
+            this.buttonRestart.Text = "Restart";
+            this.buttonRestart.UseVisualStyleBackColor = false;
+            this.buttonRestart.Visible = false;
+            this.buttonRestart.Click += new System.EventHandler(this.buttonRestart_Click);
+            // 
             // FormPlayerVsPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 491);
+            this.BackgroundImage = global::Tic_tac_toe.Properties.Resources.background_game;
+            this.ClientSize = new System.Drawing.Size(574, 491);
+            this.Controls.Add(this.buttonRestart);
+            this.Controls.Add(this.labelCountRight);
+            this.Controls.Add(this.labelCountLeft);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -243,6 +317,11 @@ namespace Tic_tac_toe
         private System.Windows.Forms.Button A3;
         private System.Windows.Forms.Button A2;
         private System.Windows.Forms.Button A1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelCountLeft;
+        private System.Windows.Forms.Label labelCountRight;
+        private System.Windows.Forms.Button buttonRestart;
     }
 }
 

@@ -63,6 +63,16 @@ namespace Tic_tac_toe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background_game {
+            get {
+                object obj = ResourceManager.GetObject("background-game", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap istockphoto_1292919739_612x612 {
             get {
                 object obj = ResourceManager.GetObject("istockphoto_1292919739_612x612", resourceCulture);
