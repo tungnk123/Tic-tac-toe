@@ -189,8 +189,7 @@ namespace Tic_tac_toe
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            MenuForm menuForm = new MenuForm();
-            menuForm.Show();
+            MenuForm.instance.Show();
         }
 
         private void FormPlayerVsPlayer_FormClosed(object sender, FormClosedEventArgs e)
