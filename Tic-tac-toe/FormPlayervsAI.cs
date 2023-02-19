@@ -58,10 +58,13 @@ namespace Tic_tac_toe
                 if (turn_count != 9)
                 {
                     Button computer_button = computer_make_move();
-                    computer_button.Tag = "O";
-                    computer_button.BackgroundImage = Tic_tac_toe.Properties.Resources.O;
-                    computer_button.BackgroundImageLayout = ImageLayout.Stretch;
-                    computer_button.Enabled = false;
+                    if (computer_button != null)
+                    {
+                        computer_button.Tag = "O";
+                        computer_button.BackgroundImage = Tic_tac_toe.Properties.Resources.O;
+                        computer_button.BackgroundImageLayout = ImageLayout.Stretch;
+                        computer_button.Enabled = false;
+                    }
                     turn_count++;
                     CheckWinner();
                 }
@@ -272,6 +275,10 @@ namespace Tic_tac_toe
 
         private Button look_for_corner()
         {
+            if ((string)B2.Tag == "")
+            {
+                return B2;
+            }
             if ((string)A1.Tag == "O")
             {
                 if ((string)A3.Tag == "")
@@ -284,6 +291,7 @@ namespace Tic_tac_toe
 
             if ((string)A3.Tag == "O")
             {
+                
                 if ((string)A1.Tag == "")
                     return A1;
                 if ((string)C3.Tag == "")
@@ -294,6 +302,7 @@ namespace Tic_tac_toe
 
             if ((string)C3.Tag == "O")
             {
+                
                 if ((string)A1.Tag == "")
                     return A3;
                 if ((string)A3.Tag == "")
@@ -304,6 +313,7 @@ namespace Tic_tac_toe
 
             if ((string)C1.Tag == "O")
             {
+                
                 if ((string)A1.Tag == "")
                     return A3;
                 if ((string)A3.Tag == "")
@@ -384,7 +394,9 @@ namespace Tic_tac_toe
                 return A3;
             if ((A3.Tag == mark) && (C1.Tag == mark) && ((string)B2.Tag == ""))
                 return B2;
-
+            //Special TESTS
+            if ((B3.Tag == mark) && (C1.Tag == mark) && ((string)C3.Tag == ""))
+                return C3;
             return null;
         }
 

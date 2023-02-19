@@ -234,7 +234,7 @@ namespace Tic_tac_toe
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Snap ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(12, 90);
+            this.label1.Location = new System.Drawing.Point(17, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 22);
             this.label1.TabIndex = 2;
@@ -246,7 +246,7 @@ namespace Tic_tac_toe
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Snap ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(449, 90);
+            this.label2.Location = new System.Drawing.Point(446, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 22);
             this.label2.TabIndex = 3;
@@ -257,7 +257,7 @@ namespace Tic_tac_toe
             this.labelCountLeft.BackColor = System.Drawing.Color.LemonChiffon;
             this.labelCountLeft.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCountLeft.ForeColor = System.Drawing.Color.Red;
-            this.labelCountLeft.Location = new System.Drawing.Point(30, 120);
+            this.labelCountLeft.Location = new System.Drawing.Point(50, 120);
             this.labelCountLeft.Name = "labelCountLeft";
             this.labelCountLeft.Size = new System.Drawing.Size(55, 55);
             this.labelCountLeft.TabIndex = 4;
@@ -269,7 +269,7 @@ namespace Tic_tac_toe
             this.labelCountRight.BackColor = System.Drawing.Color.LemonChiffon;
             this.labelCountRight.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCountRight.ForeColor = System.Drawing.Color.Red;
-            this.labelCountRight.Location = new System.Drawing.Point(485, 120);
+            this.labelCountRight.Location = new System.Drawing.Point(481, 120);
             this.labelCountRight.Name = "labelCountRight";
             this.labelCountRight.Size = new System.Drawing.Size(55, 55);
             this.labelCountRight.TabIndex = 5;

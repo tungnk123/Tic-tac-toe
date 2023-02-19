@@ -256,7 +256,7 @@ namespace Tic_tac_toe
             this.labelCountLeft.BackColor = System.Drawing.Color.LemonChiffon;
             this.labelCountLeft.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCountLeft.ForeColor = System.Drawing.Color.Red;
-            this.labelCountLeft.Location = new System.Drawing.Point(30, 120);
+            this.labelCountLeft.Location = new System.Drawing.Point(38, 120);
             this.labelCountLeft.Name = "labelCountLeft";
             this.labelCountLeft.Size = new System.Drawing.Size(55, 55);
             this.labelCountLeft.TabIndex = 4;
@@ -268,7 +268,7 @@ namespace Tic_tac_toe
             this.labelCountRight.BackColor = System.Drawing.Color.LemonChiffon;
             this.labelCountRight.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCountRight.ForeColor = System.Drawing.Color.Red;
-            this.labelCountRight.Location = new System.Drawing.Point(485, 120);
+            this.labelCountRight.Location = new System.Drawing.Point(478, 120);
             this.labelCountRight.Name = "labelCountRight";
             this.labelCountRight.Size = new System.Drawing.Size(55, 55);
             this.labelCountRight.TabIndex = 5;
