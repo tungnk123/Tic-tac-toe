@@ -48,7 +48,7 @@ namespace Tic_tac_toe
             else
             {
                 button.Tag = "O";
-                button.BackgroundImage = Tic_tac_toe.Properties.Resources.O;
+                button.BackgroundImage = Tic_tac_toe.Properties.Resources.o_white;
                 button.BackgroundImageLayout = ImageLayout.Stretch;
             }
             turn = !turn;
@@ -150,7 +150,7 @@ namespace Tic_tac_toe
                 else
                 {
                     button.Tag = "O";
-                    button.BackgroundImage = Tic_tac_toe.Properties.Resources.O;
+                    button.BackgroundImage = Tic_tac_toe.Properties.Resources.o_white;
                     button.BackgroundImageLayout = ImageLayout.Stretch;
                 }
             }
