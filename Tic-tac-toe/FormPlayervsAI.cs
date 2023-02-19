@@ -275,7 +275,7 @@ namespace Tic_tac_toe
 
         private Button look_for_corner()
         {
-            if ((string)B2.Tag == "")
+            if ((string)B2.Tag == "" && (string)A1.Tag != "X" && (string)A3.Tag != "X" && (string)C1.Tag != "X" && (string)C3.Tag != "X")
             {
                 return B2;
             }
@@ -397,6 +397,7 @@ namespace Tic_tac_toe
             //Special TESTS
             if ((B3.Tag == mark) && (C1.Tag == mark) && ((string)C3.Tag == ""))
                 return C3;
+            
             return null;
         }
 
