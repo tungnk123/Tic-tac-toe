@@ -61,7 +61,7 @@ namespace Tic_tac_toe
                     if (computer_button != null)
                     {
                         computer_button.Tag = "O";
-                        computer_button.BackgroundImage = Tic_tac_toe.Properties.Resources.O;
+                        computer_button.BackgroundImage = Tic_tac_toe.Properties.Resources.o_white;
                         computer_button.BackgroundImageLayout = ImageLayout.Stretch;
                         computer_button.Enabled = false;
                     }
