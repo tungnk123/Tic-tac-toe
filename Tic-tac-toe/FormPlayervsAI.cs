@@ -6,6 +6,8 @@ namespace Tic_tac_toe
     public partial class FormPlayerVsAI : Form
     {
         bool turn = true; //true = left Turn; false = right turn
+        public bool isPlayerWin = false;
+
         public bool Turn
         {
             get
@@ -44,20 +46,27 @@ namespace Tic_tac_toe
                 button.Tag = "X";
                 button.BackgroundImage = Tic_tac_toe.Properties.Resources.x;
                 button.BackgroundImageLayout = ImageLayout.Stretch;
+                turn_count++;
+                button.Enabled = false;
+                CheckWinner();
+                if (isPlayerWin)
+                {
+                    return;
+                }
+                
 
+                if (turn_count != 9)
+                {
+                    Button computer_button = computer_make_move();
+                    computer_button.Tag = "O";
+                    computer_button.BackgroundImage = Tic_tac_toe.Properties.Resources.O;
+                    computer_button.BackgroundImageLayout = ImageLayout.Stretch;
+                    computer_button.Enabled = false;
+                    turn_count++;
+                    CheckWinner();
+                }
             }
-            else
-            {
-                button = computer_make_move();
-                button.Tag = "O";
-                button.BackgroundImage = Tic_tac_toe.Properties.Resources.O;
-                button.BackgroundImageLayout = ImageLayout.Stretch;
-            }
-            turn = !turn;
-            button.Enabled = false;
-            turn_count++;
-            CheckWinner();
-
+            
 
         }
         public void CheckWinner()
@@ -107,20 +116,21 @@ namespace Tic_tac_toe
             if (there_is_a_winner)
             {
                 string winner = "";
-                if (turn)
+                if (turn_count % 2 == 0)
                 {
-                    winner = "O";
+                    winner = "Computer";
                     count_right++;
                 }
                 else
                 {
-                    winner = "X";
+                    winner = "Player";
                     count_left++;
+                    isPlayerWin = true;
                 }
 
                 MessageBox.Show($"{winner} is win!");
-                labelCountLeft.Tag = count_left.ToString();
-                labelCountRight.Tag = count_right.ToString();
+                labelCountLeft.Text = count_left.ToString();
+                labelCountRight.Text = count_right.ToString();
                 DisableButton();
                 buttonRestart.Visible = true;
                 return;
@@ -151,7 +161,7 @@ namespace Tic_tac_toe
                     button.BackgroundImage = Tic_tac_toe.Properties.Resources.x;
                     button.BackgroundImageLayout = ImageLayout.Stretch;
                 }
-               
+
             }
         }
 
@@ -203,6 +213,7 @@ namespace Tic_tac_toe
             turn = true;
             turn_count = 0;
             buttonRestart.Visible = false;
+            isPlayerWin = false;
             foreach (Button button in panel1.Controls)
             {
                 button.Enabled = true;
@@ -247,7 +258,8 @@ namespace Tic_tac_toe
             Button b = null;
             foreach (Button c in panel1.Controls)
             {
-                b = (Button)c; 
+                b = (Button)c;
+
                 if (b != null)
                 {
                     if ((string)b.Tag == "")
