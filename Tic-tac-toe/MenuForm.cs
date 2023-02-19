@@ -32,5 +32,16 @@ namespace Tic_tac_toe
             FormPlayerVsAI formPlayerVsAI = new FormPlayerVsAI();
             formPlayerVsAI.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Help help = new Help();
+            help.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

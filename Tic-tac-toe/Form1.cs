@@ -196,6 +196,11 @@ namespace Tic_tac_toe
         {
             MenuForm.instance.Show();
         }
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help help = new Help();
+            help.ShowDialog();
+        }
 
         #endregion
 
@@ -212,6 +217,6 @@ namespace Tic_tac_toe
             }
         }
 
-
+        
     }
 }
