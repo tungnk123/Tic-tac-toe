@@ -114,7 +114,7 @@ namespace Tic_tac_toe
                     count_left++;
                 }
 
-                MessageBox.Show($"{winner} is win!");
+                MessageBox.Show($"{winner} is win!","Tic Tac Toe Tung");
                 labelCountLeft.Text = count_left.ToString();
                 labelCountRight.Text = count_right.ToString();
                 DisableButton();
@@ -123,7 +123,7 @@ namespace Tic_tac_toe
             }
             if (turn_count == 9)
             {
-                MessageBox.Show("Draw!");
+                MessageBox.Show("Draw!", "Tic Tac Toe Tung");
                 buttonRestart.Visible = true;
                 return;
             }
