@@ -98,9 +98,10 @@ namespace Tic_tac_toe
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label5.Location = new System.Drawing.Point(27, 139);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(345, 40);
+            this.label5.Size = new System.Drawing.Size(398, 40);
             this.label5.TabIndex = 5;
-            this.label5.Text = "If you can win the computer, please contact me \r\nso I can give you 1000$.\r\n";
+            this.label5.Text = "If you can win 5 scores vs the computer, please contact\r\nme so I can give you 100" +
+    "0$.\r\n";
             // 
             // Help
             // 
