@@ -202,6 +202,10 @@ namespace Tic_tac_toe
             help.ShowDialog();
         }
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
         #endregion
 
         private void buttonRestart_Click(object sender, EventArgs e)

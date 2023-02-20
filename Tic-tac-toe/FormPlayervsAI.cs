@@ -412,5 +412,10 @@ namespace Tic_tac_toe
             Help help = new Help();
             help.ShowDialog();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
