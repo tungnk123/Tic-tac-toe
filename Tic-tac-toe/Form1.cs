@@ -6,6 +6,9 @@ namespace Tic_tac_toe
     public partial class FormPlayerVsPlayer : Form
     {
         bool turn = true; //true = left Turn; false = right turn
+
+
+        //test commit
         public bool Turn
         {
             get
